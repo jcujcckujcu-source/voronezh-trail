@@ -1,0 +1,76 @@
+﻿{
+  "expo": {
+    "name": "Воронеж исторический",
+    "slug": "voronezh-historical-trail",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2E8B57"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.voronezh.historicaltrail",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Приложению нужен доступ к камере для съёмки фото исторических мест Воронежа",
+        "NSPhotoLibraryUsageDescription": "Приложению нужен доступ к галерее для сохранения и выбора фотографий точек маршрута",
+        "NSPhotoLibraryAddUsageDescription": "Приложению нужно разрешение на сохранение фото в вашу галерею",
+        "NSLocationWhenInUseUsageDescription": "Приложению нужен доступ к геолокации для определения ближайших исторических точек"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#2E8B57"
+      },
+      "package": "com.voronezh.historicaltrail",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_MEDIA_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-location",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Приложению требуется доступ к вашим фото для сохранения изображений исторических мест.",
+          "cameraPermission": "Приложению требуется доступ к камере для съёмки фото точек маршрута."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Разрешите доступ к фото для сохранения изображений в вашу галерею.",
+          "savePhotosPermission": "Разрешите сохранение фото в вашу галерею.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Приложению требуется доступ к камере для AR-режима и фотографирования."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "ваш-project-id"
+      }
+    }
+  }
+}
